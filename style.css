@@ -209,12 +209,12 @@ nav ul li a:hover{
 /*----------about---------*/
 .headabout{
     text-align: center;
-    padding: 5%;
+    padding: 80%;
 }
-.lorem{
+.lorem a{
     padding: 5px 5px;
+    width: 80%;
 }
-
 
 
 

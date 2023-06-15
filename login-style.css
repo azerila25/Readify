@@ -102,7 +102,6 @@ button:hover {
     transition: 1s;
 }
 
-
 @media (max-width: 790px) {
     .container {
         align-items: center;

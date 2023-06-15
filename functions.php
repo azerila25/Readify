@@ -32,6 +32,21 @@
 		return mysqli_affected_rows($conn);
 	}
 
+	function borrows($data){
+		global $conn;
+		$nama = strtolower(stripslashes($data["nama"]));
+		$judul_buku = strtolower(stripslashes($data["judul_buku"]));
+		$alamat = strtolower(stripslashes($data["alamat"]));
+		$email = stripslashes($data["email"]);
+		$telepon = strtolower(stripslashes($data["telepon"]));
+		$tanggal_peminjaman = stripslashes($data["tanggal_peminjaman"]);
+		$tanggal_pengembalian = stripslashes($data["tanggal_pengembalian"]);
+		
+		mysqli_query($conn, "INSERT INTO user_borrow VALUES('','$nama','$judul_buku','$email','$alamat','$telepon','$tanggal_peminjaman','$tanggal_pengembalian')");
+
+		return mysqli_affected_rows($conn);
+	}
+
 	if(isset($_POST["login"])){
 
         $email = $_POST['email'];
@@ -43,7 +58,7 @@
 
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row["password"])){
-                header("location: beginpage.html");
+                header("location: beginpage.php");
                 exit;
             }
 
@@ -53,7 +68,7 @@
     }
  ?>
  <?php if(isset($error)) : ?>
-    echo "<script>
+    <script>
           alert('user tidak ditemukan, coba lagi!');
-          </script>";
+    </script>
 <?php endif; ?>
