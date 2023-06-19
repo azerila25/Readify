@@ -17,9 +17,7 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
                 <a href="#" class="logo"><img src="img/readifyicon.png" alt=""></a>
                 <ul class="menu">
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#featured">featured</a></li>
-                    <li><a href="#product">product</a></li>
-                    <li><a href="#catagories">catagories</a></li>
+                    <li><a href="">About</a></li>
                     <li><a href="index.html">Log Out</a></li>
                 </ul>
                 <a href="#" class="siteName">Readify</a>
@@ -76,7 +74,7 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
                         <img src="img/<?php echo $row["gambar"]; ?>" width="175" alt="">
                         <h3><?php echo $row["judul_buku"]; ?></h3>
                         <h5>Written By : <?php echo $row["penulis"]; ?></h5>
-                        <div class="price"><?php echo $row["harga_buku"]; ?></div>                    
+                        <div class="price">Shop Price : <?php echo $row["harga_buku"]; ?></div>                    
                         <p><?php echo $row["premis"]; ?></p>
                         <div class="stars">
                             <i class="fa fa-star"></i>
@@ -97,25 +95,21 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
                 <div class="box">
                     <img src="img/listnovel.jpg" alt="">
                     <h3>Novel Book</h3>
-                    <p>upto 80% off</p>
                     <a href="#" class="btn">Find Out Here</a>
                 </div>
                 <div class="box">
                     <img src="img/listromance.jpg" alt="">
                     <h3>Sci-Fi Book</h3>
-                    <p>upto 50% off</p>
                     <a href="#" class="btn">Find Out Here</a>
                 </div>
                 <div class="box">
                     <img src="img/listscifi.jpg" alt="">
                     <h3>Romance Book</h3>
-                    <p>upto 60% off</p>
                     <a href="#" class="btn">Find Out Here</a>
                 </div>
                 <div class="box">
                     <img src="img/listinter.jpg" alt="">
                     <h3>International Book</h3>
-                    <p>upto 40% off</p>
                     <a href="#" class="btn">Find Out Here</a>
                 </div>
             </div>
@@ -136,11 +130,11 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
                 </div>
                 <div class="box">
                     <h3>Contact info</h3>
-                    <a href="#" class="links"><i class="fa fa-phone"> +62 813-2389-2687</i></a>
-                    <a href="#" class="links"><i class="fa fa-phone"> +62 896-5355-4870</i></a>
-                    <a href="#" class="links"><i class="fa fa-phone"> +62 821-1369-9744</i></a>
-                    <a href="#" class="links"><i class="fa fa-envelope"> muamir@gmail.com</i></a>
-                    <a href="#" class="links"><i class="fa fa-map-marker"> Tangerang, Indonesia</i></a>
+                    <a class="links"><i class="fa fa-phone"> +62 813-2389-2687</i></a>
+                    <a class="links"><i class="fa fa-phone"> +62 896-5355-4870</i></a>
+                    <a class="links"><i class="fa fa-phone"> +62 821-1369-9744</i></a>
+                    <a class="links"><i class="fa fa-envelope"> muamir@gmail.com</i></a>
+                    <a class="links"><i class="fa fa-map-marker"> Tangerang, Indonesia</i></a>
                 </div>
                 <div class="box">
                     <h3>Quick link</h3>
