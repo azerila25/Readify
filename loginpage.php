@@ -27,12 +27,9 @@
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <button type="submit" name="login">Login</button>
                 <p>
-                    <a class="link" href="#">Forgot Password?</a>
+                <a class="link" href="index.html">Back to Home</a>
                     <a>|</a>
                     <a class="link" href="registerpage.php">Register</a>
-                </p>
-                <p>
-                    <a class="link" href="index.html">back to Home</a>
                 </p>
             </form>
         </div>

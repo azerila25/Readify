@@ -1,14 +1,14 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "pomodify");
 
-$result = mysqli_query($conn, "SELECT * FROM data_buku");
+$result = mysqli_query($conn, "SELECT * FROM data_buku_novel");
 ?>
 <DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
-        <title>Hello, bookworm</title>
+        <title>Novel Collections</title>
         <link rel="shortcut icon" type="image/png" href="img/readifyicon.png" class="icon">
     </head>
     <body>
@@ -26,45 +26,18 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
                 <p>Readify</p>
                 <h1>Find Your <span>Ideal</span> Books Here</h1>
                 <p class="details">
-                    'Aku rela di penjara asalkan bersama buku, karena dengan buku aku bebas'
+                    'Jangan pernah menganggap remeh kekuatan sebuah buku. Buku bisa mengubah dunia.'
                 <p class="details">
-                    - Mohammad Hatta
+                    - Malala Yousafzai
                 </p>
 
                 </p>
             </section>
         </section>
-        <section class="featured" id="featured">
-            <h1 class="heading">Our<span>Featured</span></h1>
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/tick.png" alt="">
-                    <h3>Best and cool</h3>
-                    <p>
-                        We provide magnificient and fantastic books that you must read all of them for your brain's nutrition
-                    </p>
-                    <a href="best.html" class="btn">Read more</a>
-                </div>
-                <div class="box">
-                    <img src="img/piggy-bank.png" alt="">
-                    <h3>Cashless</h3>
-                    <p>
-                        Save your money and Reach more knowledge from our provider
-                    </p>
-                    <a href="cashless.html" class="btn">Read more</a>
-                </div>
-                <div class="box">
-                    <img src="img/clock.png" alt="">
-                    <h3>Long-Term Loan</h3>
-                    <p>
-                        We provide you to borrow our book collections even in a long time
-                    </p>
-                    <a href="longloan.html" class="btn">Read more</a>
-                </div>
-            </div>
-        </section>
+       
         <section class="product" id="product">
-            <h1 class="heading">Top<span>Weekly</span></h1>
+            <h1 class="heading"><span></span></h1>
+            <h1 class="heading">Novel<span>Collection</span></h1>
 
             <?php while( $row = mysqli_fetch_assoc($result)) : ?>
             <div class="product-slider">
@@ -88,31 +61,7 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
             </div>
             <?php endwhile; ?>
         </section>
-        <section class="catagories" id="catagories">
-            <h1 class="heading">Book<span>Catagories</span></h1>
-            <div class="box-container">
-                <div class="box">
-                    <img src="img/listnovel.jpg" alt="">
-                    <h3>Novel Book</h3>
-                    <a href="novelpage.php" class="btn">Find Out Here</a>
-                </div>
-                <div class="box">
-                    <img src="img/listromance.jpg" alt="">
-                    <h3>Sci-Fi Book</h3>
-                    <a href="scifipage.php" class="btn">Find Out Here</a>
-                </div>
-                <div class="box">
-                    <img src="img/listscifi.jpg" alt="">
-                    <h3>Non-Fiction Book</h3>
-                    <a href="nonficpage.php" class="btn">Find Out Here</a>
-                </div>
-                <div class="box">
-                    <img src="img/listinter.jpg" alt="">
-                    <h3>International Book</h3>
-                    <a href="interpage.php" class="btn">Find Out Here</a>
-                </div>
-            </div>
-        </section>
+        
         <section class="footer">
             <div class="box-container">
                 <div class="box">
