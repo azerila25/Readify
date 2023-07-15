@@ -5,7 +5,7 @@
     if(isset($_POST["register"])){
         if(registrasi($_POST) > 0 )
             echo "<script>
-                alert('user baru ditambah');
+                alert('user has been added succesfully');
         </script>";
     } else {
         echo mysqli_error($conn);
@@ -31,9 +31,9 @@
                 <hr>
                 <p></p>
                 <label for="">First Name</label>
-                <input type="text" name="first_name" id="first_name" placeholder="Your First Name">
+                <input type="text" name="first_name" id="first_name" onkeypress="return onlylet(event);" placeholder="Your First Name (Max. 20 Letters)">
                 <label for="">Surname</label>
-                <input type="text" name="surname" id="surname" placeholder="Your Surname">
+                <input type="text" name="surname" id="surname" onkeypress="return onlylet(event);" placeholder="Your Surname (Max. 20 Letters)">
                 <label for="">Email</label>
                 <input type="text" name="email" id="email" placeholder="example@gmail.com">
                 <label for="">Password</label>
@@ -44,6 +44,14 @@
                 <p>
                     <a class="link" href="loginpage.php">Login</a>
                 </p>
+                <script type="text/javascript">
+                    function onlylet(evt){
+                        var charcode = (evt.which) ? evt.which : event.keycode
+                        if (charcode > 31 && (charcode <48 || charcode > 57))
+                        return true;
+                        return false;
+                    }
+                </script>
             </form>
         </div>
         <div class="right">

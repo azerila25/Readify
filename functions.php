@@ -1,5 +1,5 @@
 <?php 
-	$conn = mysqli_connect("localhost","root","","pomodify");
+	$conn = mysqli_connect("localhost","root","","readify");
 
 	function query($query){
 		global $conn;
@@ -21,7 +21,7 @@
 
 		if ($password !== $password2){
 			echo "<script>
-					alert('konfirmasi password tidak sesuai');
+					alert('the password is incorrect');
 				 </script>";
 			return false;
 		}
@@ -40,9 +40,8 @@
 		$email = stripslashes($data["email"]);
 		$telepon = strtolower(stripslashes($data["telepon"]));
 		$tanggal_peminjaman = stripslashes($data["tanggal_peminjaman"]);
-		$tanggal_pengembalian = stripslashes($data["tanggal_pengembalian"]);
-		
-		mysqli_query($conn, "INSERT INTO user_borrow VALUES('','$nama','$judul_buku','$email','$alamat','$telepon','$tanggal_peminjaman','$tanggal_pengembalian')");
+
+		mysqli_query($conn, "INSERT INTO user_borrow VALUES('','$nama','$judul_buku','$email','$alamat','$telepon','$tanggal_peminjaman')");
 
 		return mysqli_affected_rows($conn);
 	}
@@ -58,7 +57,17 @@
 
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row["password"])){
-                header("location: beginpage.php");
+				//session
+				$_SESSION["login"] = true;
+
+				//remember me
+				if(isset($_POST['remember'])){
+					//cookie
+					setcookie('id',$row['id'],time() + 60);
+					setcookie('key',hash('sha256',$row['username']),time() + 60);
+				}
+
+                header("Location: beginpage.php");
                 exit;
             }
 
@@ -67,8 +76,9 @@
 
     }
  ?>
+
  <?php if(isset($error)) : ?>
     <script>
-          alert('user tidak ditemukan, coba lagi!');
+          alert('user unknown, try again!');
     </script>
 <?php endif; ?>

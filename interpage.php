@@ -1,5 +1,12 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "pomodify");
+session_start();
+
+if(!isset($_SESSION["login"])){
+    header ("Location: loginpage.php");
+    exit;
+}
+
+$conn = mysqli_connect("localhost", "root", "", "readify");
 
 $result = mysqli_query($conn, "SELECT * FROM data_buku_inter");
 ?>
@@ -18,7 +25,7 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku_inter");
                 <ul class="menu">
                     <li><a href="beginpage.php" class="active">Home</a></li>
                     <li><a href="aboutus2.html">About</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="index.php">Log Out</a></li>
                 </ul>
                 <a href="#" class="siteName">Readify</a>
             </nav>

@@ -1,5 +1,13 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "pomodify");
+
+session_start();
+
+if(!isset($_SESSION["login"])){
+    header ("Location: loginpage.php");
+    exit;
+}
+
+$conn = mysqli_connect("localhost", "root", "", "readify");
 
 $result = mysqli_query($conn, "SELECT * FROM data_buku");
 ?>
@@ -14,11 +22,13 @@ $result = mysqli_query($conn, "SELECT * FROM data_buku");
     <body>
         <section class="main">
             <nav>
-                <a href="#" class="logo"><img src="img/readifyicon.png" alt=""></a>
+                <a class="logo"><img src="img/readifyicon.png" alt=""></a>
                 <ul class="menu">
                     <li><a href="beginpage.php" class="active">Home</a></li>
+                    <li><a href="" class="active">History</a></li>
                     <li><a href="aboutus2.html">About</a></li>
-                    <li><a href="index.html">Log Out</a></li>
+                    <li><a href="logout.php">Log Out</a></li>
+                    
                 </ul>
                 <a href="#" class="siteName">Readify</a>
             </nav>

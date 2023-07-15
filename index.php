@@ -1,4 +1,5 @@
-
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
             <h4>Readify</h4>
         </div>
         <ul>
-            <li><a class="btn" href="index.html">Home</a></li>
+            <li><a class="btn" href="index.php">Home</a></li>
             <li><a class="btn" href="aboutus.html">About</a></li>
             <li><a class="btn" href="loginpage.php">Login</a></li>
         </ul>
